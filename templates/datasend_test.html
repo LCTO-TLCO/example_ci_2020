@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>データを送るよ!</title>
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/popper.min.js" %}"></script>
+    <script src="{% static 'js/send_data.js' %}"></script>
+</head>
+<body>
+<form id="estimate">
+    {% csrf_token %}
+    <b>
+        <p>
+            <output id="estimate">0</output>
+        </p>
+    </b>
+    <P><input id="estimate_gage" type="range" min="-0" max="100" step="1" value="0"></P>
+    <input id="verify_machine" type="submit" value="決定">
+</form>
+<button id="resend">再送信</button>
+</body>
+</html>
